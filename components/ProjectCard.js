@@ -11,16 +11,28 @@ function ProjectCard({ name, githubUrl, imageUrl, projectUrl, deployed }) {
       transition={{ duration: 0.3 }}
       className="mb-4 p-4 border border-gray-200 rounded-lg bg-whitesmoke shadow-md"
     >
-      <img src={imageUrl} alt={`${name} image`} />
-      <h3 className="">{name}</h3>
-      <div>
-        <a href={githubUrl} target="_blank">
+      <img
+        src={imageUrl}
+        alt={`${name} image`}
+        className="w-full h-auto mb-2 rounded-lg"
+      />
+      <h3 className="ml-2">{name}</h3>
+      <div className="flex gap-2 items-center w-full m-1">
+        <a
+          href={githubUrl}
+          target="_blank"
+          className="text-darkblue p-1 rounded-full text-lg"
+        >
           <AiFillGithub />
         </a>
         {deployed ? (
-          <a href={projectUrl} target="_blank">
+          <a
+            href={projectUrl}
+            target="_blank"
+            className="text-darkblue p-1 rounded-full text-lg"
+          >
             {projectUrl}
-            <AiFillEye />
+            <AiFillEye className="text-darkblue p-1 rounded-full text-2xl" />
           </a>
         ) : null}
       </div>
